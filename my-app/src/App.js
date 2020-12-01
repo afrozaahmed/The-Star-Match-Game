@@ -31,7 +31,7 @@ const Game = (props) => {
   const [stars, setStars] = useState(utils.random(1,9));
   const [availableNums, setavailableNums] = useState(utils.range(1,9));
   const [candidateNums, setcandidateNums] = useState([]);
-  const [secondLeft, setSecondLeft] = useState(10);
+  const [secondLeft, setSecondLeft] = useState(20);
 
   useEffect(()=>{
     if(secondLeft > 0 && availableNums.length >0){
@@ -103,7 +103,10 @@ if(utils.sum(newCandidateNums) !== stars){
           )}
         </div>
       </div>
-          <div className="timer">Time Remaining: {secondLeft}</div>
+          <div 
+          className="timer"
+          style={{color:"red"}}
+          >Time Remaining: {secondLeft}</div>
     </div>
   );
 };
